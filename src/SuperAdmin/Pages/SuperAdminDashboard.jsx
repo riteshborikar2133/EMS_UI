@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import Recruitment from "../Recruitment/pages/Recruitment";
 import Pipeline from "../Recruitment/Components/Pipeline";
 import Recu from "../Recruitment/pages/Recu";
+import Employee from "../Employee/Pages/Employee";
+import EmployeeList from "../Employee/Components/EmployeeList";
 
 export default function SuperAdminDashboard() {
   return (
@@ -15,8 +17,13 @@ export default function SuperAdminDashboard() {
       <div className=" box-border p-4 border w-full">
         <Navbar />
         <Routes>
-          <Route path="recuitment" element={<Recu />} />
-          <Route path="recuitment/pipeline" element={<Pipeline />} />
+          <Route path="recu/*" element={<Recu />}>
+            <Route path="pipeline" element={<Pipeline />} />
+          </Route>
+
+          <Route path="emp/*" element={<Employee />}>
+            <Route path="list" element={<EmployeeList />} />
+          </Route>
         </Routes>
       </div>
     </div>

@@ -64,7 +64,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    quote();
+    // quote();
   }, []); // Empty dependency array ensures this effect runs only once
 
   return (

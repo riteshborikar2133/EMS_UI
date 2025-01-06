@@ -49,9 +49,12 @@ export default function Sidebar() {
               isHidden === "recu" ? "block" : "hidden"
             }`}
           >
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Dashboard
-            </h2>
+            <NavLink to="">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
             <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
               Recruitment Pipeline{" "}
             </h2>
@@ -79,55 +82,75 @@ export default function Sidebar() {
           </div>
         </div>
 
-
-
         <div>
-        <button
-          onClick={() => {
-            isHidden === "emp" ? setIsHidden(null) : setIsHidden("emp");
-          }}
-          className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
-        >
-          <img src={Employee} alt="" />
-          Employee
-        </button>
+          <button
+            onClick={() => {
+              isHidden === "emp" ? setIsHidden(null) : setIsHidden("emp");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Employee} alt="" />
+            Employee
+          </button>
 
-        <div
+          <div
             className={`hidden-opt px-5 text-md ${
               isHidden === "emp" ? "block" : "hidden"
             }`}
           >
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Profile
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Employee
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Shift Request
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Work Type Request
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Rotating Shift Assign
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Rotating Work Type Assign
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Disciplinary Actions
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Policies
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Oragnization Chart
-            </h2>
+            <NavLink to="/employee/profile">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Profile
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/employee-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Employee
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/document-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Document Request
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/shift-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Shift Request
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/work-type-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Work Type Request
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/rotating-shift-assign">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Rotating Shift Assign
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/rotating-work-type-assign">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Rotating Work Type Assign
+              </h2>{" "}
+            </NavLink>
+            <NavLink to="/employee/disciplinary-actions">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Disciplinary Actions
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/view-policies">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Policies
+              </h2>
+            </NavLink>
+            <NavLink to="/employee/organisation-chart">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Oragnization Chart
+              </h2>
+            </NavLink>
           </div>
         </div>
 
-        
         <NavLink to="/home/attendance" className="">
           <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5">
             <img src={Attendance} alt="" />

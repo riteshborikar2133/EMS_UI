@@ -82,6 +82,40 @@ export default function Sidebar() {
           </div>
         </div>
 
+
+
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "onboard" ? setIsHidden(null) : setIsHidden("onboard");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Employee} alt="" />
+            Onboarding
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "onboard" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/onboarding/onboarding-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Onboarding View
+              </h2>
+            </NavLink>
+
+            <NavLink to="/onboarding/candidates-view">
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Candidates View{" "}
+            </h2>
+            </NavLink>
+          </div>
+        </div>
+
+
+
         <div>
           <button
             onClick={() => {

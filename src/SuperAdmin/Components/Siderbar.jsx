@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Home from "../../assets/icons/home.png";
 import Employee from "../../assets/icons/employee.png";
@@ -9,37 +9,11 @@ import Micronet from "../../assets/icons/micronet.jpg";
 import axios from "axios";
 
 export default function Sidebar() {
+  const [isHidden, setIsHidden] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    const token = localStorage.getItem("access_token"); // Get the token from localStorage
-    const data = JSON.parse(localStorage.getItem("data")); // Get the token from localStorage
-    const reftoken = {
-      refresh_token: data.refresh,
-    };
-
-    console.log(reftoken);
-    // const data = {}; // Add any necessary data for the logout request if needed
-
-    try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/logout`,
-        reftoken,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      // After successful logout, clear localStorage or perform other tasks
-      localStorage.removeItem("token"); // Remove the token from localStorage
-      localStorage.clear();
-      navigate("/login"); // Redirect the user to the login page
-    } catch (error) {
-      console.error("Error logging out:", error);
-      // Optionally handle the error (e.g., show a notification)
-    }
+  const toggleHidden = () => {
+    setIsHidden(!isHidden);
   };
 
   return (
@@ -59,18 +33,101 @@ export default function Sidebar() {
             Dashboard
           </div>
         </NavLink>
-        <NavLink to="/home/manager" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "recu" ? setIsHidden(null) : setIsHidden("recu");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
             <img src={Employee} alt="" />
-            Manager
+            Recruitment
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "recu" ? "block" : "hidden"
+            }`}
+          >
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Dashboard
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Recruitment Pipeline{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Recruitment Survey{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Candidates{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Interview{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Recruitment{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Open Jobs{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Stages{" "}
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Skill Zone{" "}
+            </h2>
           </div>
-        </NavLink>
-        <NavLink to="/home/employee" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5">
-            <img src={Employee} alt="" />
-            Employee
+        </div>
+
+
+
+        <div>
+        <button
+          onClick={() => {
+            isHidden === "emp" ? setIsHidden(null) : setIsHidden("emp");
+          }}
+          className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+        >
+          <img src={Employee} alt="" />
+          Employee
+        </button>
+
+        <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "emp" ? "block" : "hidden"
+            }`}
+          >
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Profile
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Employee
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Shift Request
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Work Type Request
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Rotating Shift Assign
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Rotating Work Type Assign
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Disciplinary Actions
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Policies
+            </h2>
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Oragnization Chart
+            </h2>
           </div>
-        </NavLink>
+        </div>
+
+        
         <NavLink to="/home/attendance" className="">
           <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5">
             <img src={Attendance} alt="" />
@@ -95,15 +152,6 @@ export default function Sidebar() {
             Employee Status
           </div>
         </NavLink>
-      </div>
-      <div>
-        <div
-          className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5 cursor-pointer"
-          onClick={handleLogout} // Call handleLogout when the button is clicked
-        >
-          <img src={Project} alt="" />
-          SignOut
-        </div>
       </div>
     </div>
   );

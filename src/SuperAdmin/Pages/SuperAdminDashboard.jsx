@@ -1,6 +1,10 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Siderbar";
+import { Route, Routes } from "react-router-dom";
+import Recruitment from "../Recruitment/pages/Recruitment";
+import Pipeline from "../Recruitment/Components/Pipeline";
+import Recu from "../Recruitment/pages/Recu";
 
 export default function SuperAdminDashboard() {
   return (
@@ -10,6 +14,10 @@ export default function SuperAdminDashboard() {
       </div>
       <div className=" box-border p-4 border w-full">
         <Navbar />
+        <Routes>
+          <Route path="recuitment" element={<Recu />} />
+          <Route path="recuitment/pipeline" element={<Pipeline />} />
+        </Routes>
       </div>
     </div>
   );

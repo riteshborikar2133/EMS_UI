@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "monasans";
+}
+
+@font-face {
+    font-family: "monasans";
+    src: url("../src/assets/fonts/MonaSans-Regular.ttf") format("opentype");
+    /* font-weight: bold; */
+}

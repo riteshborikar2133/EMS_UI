@@ -18,9 +18,9 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Home Route for role-based dashboards */}
-        <Route path="/home/*" element={<SuperAdminDashboard />} />
-        <Route path="/recruitment/*" element={<Recruitment />} />
-        <Route path="/employee/*" element={<Employee />} />
+        <Route path="/*" element={<SuperAdminDashboard />} />
+        <Route path="/recruitments/*" element={<Recruitment />} />
+        <Route path="/employees/*" element={<Employee />} />
         <Route path="/onboarding/*" element={<Onboarding />} />
         <Route path="*" element={<Pagenotfound />} />
       </Routes>

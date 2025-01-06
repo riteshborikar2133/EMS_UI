@@ -17,12 +17,12 @@ export default function SuperAdminDashboard() {
       <div className=" box-border p-4 border w-full">
         <Navbar />
         <Routes>
-          <Route path="recu/*" element={<Recu />}>
+          <Route path="recruitment/*" element={<Recu />}>
             <Route path="pipeline" element={<Pipeline />} />
           </Route>
 
-          <Route path="emp/*" element={<Employee />}>
-            <Route path="list" element={<EmployeeList />} />
+          <Route path="employee/*" element={<Employee />}>
+            <Route path="employee-view" element={<EmployeeList />} />
           </Route>
         </Routes>
       </div>

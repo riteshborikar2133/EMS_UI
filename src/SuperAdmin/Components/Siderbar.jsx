@@ -7,6 +7,7 @@ import Leave from "../../assets/icons/leave.png";
 import Project from "../../assets/icons/project.png";
 import Micronet from "../../assets/icons/micronet.jpg";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 export default function Sidebar() {
   const [isHidden, setIsHidden] = useState(null);
@@ -17,7 +18,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="box-border border h-full bg-white p-3 rounded-lg shadow-sm">
+    <div className="box-border border h-full bg-white p-3 rounded-lg shadow-sm overflow-y-auto">
       <div className="flex items-center justify-center">
         <img src={Micronet} alt="" className="h-10" />
         <h2 className="font-bold text-xl">Micronet</h2>
@@ -49,36 +50,52 @@ export default function Sidebar() {
               isHidden === "recu" ? "block" : "hidden"
             }`}
           >
-            <NavLink to="">
+            <NavLink to="/recruitment/dashboard">
               <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
                 Dashboard
               </h2>
             </NavLink>
+            <NavLink to="/recruitment/pipeline">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Recruitment Pipeline
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/recruitment-survey-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Recruitment Survey
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/candidate-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Candidates
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/interview-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Interview
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/recruitment-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Recruitment
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/open-recruitments">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Open Jobs
+              </h2>
+            </NavLink>
 
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Recruitment Pipeline{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Recruitment Survey{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Candidates{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Interview{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Recruitment{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Open Jobs{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Stages{" "}
-            </h2>
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Skill Zone{" "}
-            </h2>
+            <NavLink to="/recruitment/stage-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Stages
+              </h2>
+            </NavLink>
+            <NavLink to="/recruitment/skill-zone-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Skill Zone
+              </h2>
+            </NavLink>
           </div>
         </div>
 
@@ -131,7 +148,7 @@ export default function Sidebar() {
             <NavLink to="/employee/rotating-work-type-assign">
               <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
                 Rotating Work Type Assign
-              </h2>{" "}
+              </h2>
             </NavLink>
             <NavLink to="/employee/disciplinary-actions">
               <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">

@@ -1,9 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import Kutta from "../../../assets/Images/Kutta.jpg";
+import About from "../Components/About";
+import WorkTypeShift from "../Components/WorkTypeShift";
+import Attendance from "../Components/Attendance";
+import Leave from "../Components/Leave";
+import Payroll from "../Components/Payroll";
+import AllowanceDeduction from "../Components/AllowanceDeduction";
+import PenaltyAccount from "../Components/PenaltyAccount";
+import Assets from "../Components/Assets";
+import Performance from "../Components/Performance";
+import Documents from "../Components/Documents";
+import BonusPoints from "../Components/BonusPoints";
+import ScheduledInterview from "../Components/ScheduledInterview";
+import Resignation from "../Components/Resignation";
 
-export default function Profile() {
+export default function EmployeeList() {
   const [list, setList] = useState([
-    { id: 1, name: "About", checked: false },
+    { id: 1, name: "About", checked: true }, // About is checked by default
     { id: 2, name: "Work Type & Shift", checked: false },
     { id: 3, name: "Attendance", checked: false },
     { id: 4, name: "Leave", checked: false },
@@ -17,29 +30,47 @@ export default function Profile() {
     { id: 12, name: "Scheduled Interview", checked: false },
     { id: 13, name: "Resignation", checked: false },
   ]);
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
-  const [activeSection, setActiveSection] = useState(null); // Track active section to display
-  const filterRef = useRef(null); // Ref for the filter container
 
+  const [activeSection, setActiveSection] = useState({ id: 1, name: "About" }); // Set About as the default active section
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const filterRef = useRef(null); // Reference for the filter dropdown
+
+  // Handle checkbox change
   const handleCheckboxChange = (id) => {
     setList((prevList) =>
       prevList.map((item) =>
-        item.id === id ? { ...item, checked: !item.checked } : item
+        item.id === id && id !== 1 // Prevent About from being unchecked
+          ? { ...item, checked: !item.checked }
+          : item
       )
     );
   };
 
+  // Select All checkboxes
   const handleSelectAll = () => {
-    setList((prevList) => prevList.map((item) => ({ ...item, checked: true })));
+    setList((prevList) =>
+      prevList.map((item) => ({ ...item, checked: true }))
+    );
   };
 
+  // Unselect All checkboxes (except About)
   const handleUnselectAll = () => {
-    setList((prevList) => prevList.map((item) => ({ ...item, checked: false })));
+    setList((prevList) =>
+      prevList.map((item) =>
+        item.id === 1 ? item : { ...item, checked: false }
+      )
+    );
   };
 
+  // Filter the list to show only selected items (About will always be in the list)
   const filteredList = list.filter((item) => item.checked);
 
-  // Close the filter container when clicking outside
+  // Handle item click to set the active section and show its corresponding component
+  const handleItemClick = (item) => {
+    setActiveSection(item);
+  };
+
+  // Close the filter when clicking outside of the filter dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
@@ -47,15 +78,14 @@ export default function Profile() {
       }
     };
 
+    // Attach event listener to close dropdown when clicking outside
     document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  const handleItemClick = (item) => {
-    setActiveSection(item); // Set the clicked item as active section to render new section
-  };
 
   return (
     <div className="box-border border bg-white p-3 px-6 rounded-lg shadow-sm w-full my-3 relative">
@@ -71,9 +101,6 @@ export default function Profile() {
             <h2 className="text-md mb-2 text-gray-600">Work Phone: None</h2>
             <h2 className="text-md mb-2 text-gray-600">Phone: 8973700081</h2>
           </div>
-        </div>
-        <div>
-          <h2>Edit Button</h2>
         </div>
       </div>
 
@@ -117,6 +144,7 @@ export default function Profile() {
                       checked={item.checked}
                       onChange={() => handleCheckboxChange(item.id)}
                       className="w-4 h-4"
+                      disabled={item.id === 1} // Disable About checkbox
                     />
                     <span>{item.name}</span>
                   </label>
@@ -143,20 +171,23 @@ export default function Profile() {
           )}
         </div>
 
-        {/* Render a custom section/div when an item is clicked */}
+        {/* Dynamically Render Components based on Active Section */}
         {activeSection && (
           <div className="mt-6 p-4 bg-gray-100 border rounded-md">
             <h3 className="text-xl font-semibold">{activeSection.name}</h3>
-            {/* Custom content here */}
-            <div className="mt-4 p-4 bg-gray-200 border rounded-md">
-              <h4 className="text-lg font-semibold">Additional Details</h4>
-              <p>This is a detailed section for {activeSection.name}. You can put any content here, such as forms, images, or tables.</p>
-              <div className="mt-4">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-                  Example Action
-                </button>
-              </div>
-            </div>
+            {activeSection.name === "About" && <About />}
+            {activeSection.name === "Work Type & Shift" && <WorkTypeShift />}
+            {activeSection.name === "Attendance" && <Attendance />}
+            {activeSection.name === "Leave" && <Leave />}
+            {activeSection.name === "Payroll" && <Payroll />}
+            {activeSection.name === "Allowance & Deduction" && <AllowanceDeduction />}
+            {activeSection.name === "Penalty Account" && <PenaltyAccount />}
+            {activeSection.name === "Assets" && <Assets />}
+            {activeSection.name === "Performance" && <Performance />}
+            {activeSection.name === "Documents" && <Documents />}
+            {activeSection.name === "Bonus Points" && <BonusPoints />}
+            {activeSection.name === "Scheduled Interview" && <ScheduledInterview />}
+            {activeSection.name === "Resignation" && <Resignation />}
           </div>
         )}
       </div>

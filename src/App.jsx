@@ -17,11 +17,7 @@ function App() {
         {/* Login Route */}
         <Route path="/login" element={<Login />} />
 
-        {/* Home Route for role-based dashboards */}
         <Route path="/*" element={<SuperAdminDashboard />} />
-        {/* <Route path="/recruitments/*" element={<Recruitment />} />
-        <Route path="/employees/*" element={<Employee />} />
-        <Route path="/onboarding/*" element={<Onboarding />} /> */}
         <Route path="*" element={<Pagenotfound />} />
       </Routes>
     </>

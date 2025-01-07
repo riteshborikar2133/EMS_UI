@@ -279,12 +279,66 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <NavLink to="/" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex  items-center gap-5">
+        {/* Leave */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "leave" ? setIsHidden(null) : setIsHidden("leave");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
             <img src={Leave} alt="" />
             Leave
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "leave" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/leave/leave-employee-dashboard">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/user-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                My Leave Requests
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Requests
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/type-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Types
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/assign-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Assigned Leave
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/leave-allocation-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Allocation Request
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/view-compensatory-leave">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Compensatory Leave Requests
+              </h2>
+            </NavLink>
           </div>
-        </NavLink>
+        </div>
 
         {/* Payroll */}
         <div>
@@ -299,18 +353,11 @@ export default function Sidebar() {
             <img src={Attendance} alt="" />
             Payroll
           </button>
-
           <div
             className={`hidden-opt px-5 text-md ${
               isHidden === "payroll" ? "block" : "hidden"
             }`}
           >
-            <NavLink to="/payroll/dashboard">
-              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-                Dashboard
-              </h2>
-            </NavLink>
-
             <NavLink to="/payroll/view-contract">
               <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
                 Contract{" "}
@@ -350,6 +397,185 @@ export default function Sidebar() {
             <NavLink to="/payroll/filing-status-view">
               <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
                 Federal Tax{" "}
+              </h2>
+            </NavLink>
+          </div>
+        </div>
+        {/* Performance */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "pms" ? setIsHidden(null) : setIsHidden("pms");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Project} alt="" />
+            Performance
+          </button>
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "pms" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/pms/dashboard-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+            <NavLink to="/pms/objective-list-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Objectives
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/feedback-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                360 Feedback
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/view-meetings">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Meetings
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/view-key-result">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Key Results
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/employee-bonus-point">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Employee Bonus Point
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/period-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Period
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/question-template-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Question Template
+              </h2>
+            </NavLink>
+          </div>
+        </div>
+
+        {/* Offboarding */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "offboard"
+                ? setIsHidden(null)
+                : setIsHidden("offboard");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Leave} alt="" />
+            Offboarding
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "offboard" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/offboarding/offboarding-pipeline">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Exit Process
+              </h2>
+            </NavLink>
+
+            <NavLink to="/offboarding/regination-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Resignation Letters{" "}
+              </h2>
+            </NavLink>
+          </div>
+        </div>
+
+        {/* Assets */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "assets" ? setIsHidden(null) : setIsHidden("assets");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Leave} alt="" />
+            Assets
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "assets" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/asset/dashboard">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/asset/asset-category-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Assets View{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/asset/asset-batch-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Assets Batches{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/asset/asset-req-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Request & Allocations{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/asset/asset-history">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Assets Histroy{" "}
+              </h2>
+            </NavLink>
+          </div>
+        </div>
+
+        {/* Help Desk */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "helpdesk"
+                ? setIsHidden(null)
+                : setIsHidden("helpdesk");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Leave} alt="" />
+            Help Desk
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "offboard" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/helpdesk/faq-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                FAQ's
+              </h2>
+            </NavLink>
+
+            <NavLink to="/helpdesk/ticket-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Tickets{" "}
               </h2>
             </NavLink>
           </div>

@@ -34,6 +34,8 @@ export default function Sidebar() {
             Dashboard
           </div>
         </NavLink>
+
+        {/* Recuritment  */}
         <div>
           <button
             onClick={() => {
@@ -99,12 +101,13 @@ export default function Sidebar() {
           </div>
         </div>
 
-
-
+        {/* Onboarding */}
         <div>
           <button
             onClick={() => {
-              isHidden === "onboard" ? setIsHidden(null) : setIsHidden("onboard");
+              isHidden === "onboard"
+                ? setIsHidden(null)
+                : setIsHidden("onboard");
             }}
             className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
           >
@@ -124,15 +127,14 @@ export default function Sidebar() {
             </NavLink>
 
             <NavLink to="/onboarding/candidates-view">
-            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
-              Candidates View{" "}
-            </h2>
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Candidates View{" "}
+              </h2>
             </NavLink>
           </div>
         </div>
 
-
-
+        {/* Employee */}
         <div>
           <button
             onClick={() => {
@@ -202,24 +204,157 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <NavLink to="/home/attendance" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5">
+        {/* Attendance */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "attendance"
+                ? setIsHidden(null)
+                : setIsHidden("attendance");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
             <img src={Attendance} alt="" />
             Attendance
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "attendance" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/attendance/dashboard">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/view-biometric-devices">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Biometric Devices{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/attendance-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Attendance{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/request-attendance-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Attendance Request{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/attendance-overtime-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Hour Requests{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/work-records">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Work Records{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/attendance-activity-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Attendance Activities{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/late-come-early-out-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Late Come Early Out{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/attendance/view-my-attendance">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                My Attendances{" "}
+              </h2>
+            </NavLink>
           </div>
-        </NavLink>
+        </div>
+
         <NavLink to="/" className="">
           <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex  items-center gap-5">
             <img src={Leave} alt="" />
             Leave
           </div>
         </NavLink>
-        <NavLink to="/home/project" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5">
-            <img src={Project} alt="" />
-            Project
+
+        {/* Payroll */}
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "payroll"
+                ? setIsHidden(null)
+                : setIsHidden("payroll");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
+            <img src={Attendance} alt="" />
+            Payroll
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "payroll" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/payroll/dashboard">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-contract">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Contract{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-allowance">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Allowance{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-deduction">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Deductions{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-payslip">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Payslips{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-loan">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Loan/ Advanced Salary{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/view-reimbursement">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Encashments & Reimbursements{" "}
+              </h2>
+            </NavLink>
+
+            <NavLink to="/payroll/filing-status-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Federal Tax{" "}
+              </h2>
+            </NavLink>
           </div>
-        </NavLink>
+        </div>
+
         <NavLink to="/home/project" className="">
           <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5">
             <img src={Employee} alt="" />

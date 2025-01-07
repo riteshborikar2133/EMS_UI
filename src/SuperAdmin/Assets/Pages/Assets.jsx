@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard";
-import AssetsView from "../Components/AssetsView";
-import ReqAndAllo from "../Components/ReqAndAllo";
-import AssetsHistroy from "../Components/AssetsHistroy";
-import AssetsBatch from "../Components/AssetsBatch";
+import Dashboard from "./Dashboard";
+import AssetsView from "./AssetsView";
+import AssetsBatch from "./AssetsBatch";
+import ReqAndAllo from "./ReqAndAllo";
+import AssetsHistroy from "./AssetsHistroy";
+
 
 export default function Assets() {
   return (

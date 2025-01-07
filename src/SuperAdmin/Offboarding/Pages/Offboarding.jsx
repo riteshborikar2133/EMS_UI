@@ -1,7 +1,7 @@
 import React, { Profiler } from "react";
 import { Route, Routes } from "react-router-dom";
-import ExitProcess from "../Components/ExitProcess";
-import Resignation from "../Components/Resignation";
+import ExitProcess from "./ExitProcess";
+import Resignation from "./Resignation";
 
 export default function Offboarding() {
   return (

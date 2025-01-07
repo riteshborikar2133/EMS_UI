@@ -11,6 +11,7 @@ import Attendace from "../Attendance/Pages/Attendace";
 import Payroll from "../Payroll/Pages/Payroll";
 import Leave from "../Leave/Pages/Leave";
 import Performance from "../Performance/Pages/Performance";
+import Assets from "../Assets/Pages/Assets";
 
 export default function SuperAdminDashboard() {
   return (
@@ -32,6 +33,8 @@ export default function SuperAdminDashboard() {
           <Route path="leave/*" element={<Leave />}></Route>
 
           <Route path="pms/*" element={<Performance />}></Route>
+
+          <Route path="/asset/*" element={<Assets />} />
         </Routes>
       </div>
     </div>

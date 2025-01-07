@@ -564,7 +564,7 @@ export default function Sidebar() {
 
           <div
             className={`hidden-opt px-5 text-md ${
-              isHidden === "offboard" ? "block" : "hidden"
+              isHidden === "helpdesk" ? "block" : "hidden"
             }`}
           >
             <NavLink to="/helpdesk/faq-view">
@@ -581,12 +581,6 @@ export default function Sidebar() {
           </div>
         </div>
 
-        <NavLink to="/home/project" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5">
-            <img src={Employee} alt="" />
-            Employee Status
-          </div>
-        </NavLink>
       </div>
     </div>
   );

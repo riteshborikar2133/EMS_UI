@@ -1,16 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Siderbar";
-import Pipeline from "../Components/Pipeline";
-import RecruitmentSurvey from "../Components/RecruitmentSurvey";
-import Candidates from "../Components/Candidates";
-import Interview from "../Components/Interview";
-import RecuritmentList from "../Components/RecuritmentList";
-import OpenJobs from "../Components/OpenJobs";
-import Stages from "../Components/Stages";
-import SkillZone from "../Components/SkillZone";
+import Dashboard from "./Dashboard";
+import Pipeline from "./Pipeline";
+import RecruitmentSurvey from "./RecruitmentSurvey";
+import Candidates from "./Candidates";
+import Interview from "./Interview";
+import RecuritmentList from "./RecuritmentList";
+import OpenJobs from "./OpenJobs";
+import Stages from "./Stages";
+import SkillZone from "./SkillZone";
 
 export default function Recruitment() {
   return (

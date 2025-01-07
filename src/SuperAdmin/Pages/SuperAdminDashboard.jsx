@@ -5,8 +5,6 @@ import { Route, Routes } from "react-router-dom";
 import Recruitment from "../Recruitment/pages/Recruitment";
 import Employee from "../Employee/Pages/Employee";
 import Onboarding from "../Onboarding/Pages/Onboarding";
-import OnboardingView from "../Onboarding/Components/OnboardingView";
-import CandidatesView from "../Onboarding/Components/CandidatesView";
 import Attendace from "../Attendance/Pages/Attendace";
 import Payroll from "../Payroll/Pages/Payroll";
 import Leave from "../Leave/Pages/Leave";

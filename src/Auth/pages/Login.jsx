@@ -34,12 +34,12 @@ const Login = () => {
     };
     try {
       const res = await axios
-        .post(`${import.meta.env.VITE_BASE_URL}/login`, data)
+        .post(`${import.meta.env.VITE_BASE_URL}/login/`, data)
         .then((e) => {
           console.log(e);
-          localStorage.setItem("access_token", e.data.access);
-          localStorage.setItem("role", e.data.roleName); // Store role
-          localStorage.setItem("data", JSON.stringify(e.data));
+          // localStorage.setItem("access_token", e.data.access);
+          // localStorage.setItem("role", e.data.roleName); // Store role
+          // localStorage.setItem("data", JSON.stringify(e.data));
         });
 
       toast.success("Login successful!");

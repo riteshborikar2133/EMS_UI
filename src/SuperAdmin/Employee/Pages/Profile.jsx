@@ -14,7 +14,7 @@ import BonusPoints from "../Components/BonusPoints";
 import ScheduledInterview from "../Components/ScheduledInterview";
 import Resignation from "../Components/Resignation";
 
-export default function EmployeeList() {
+export default function Profile() {
   const [list, setList] = useState([
     { id: 1, name: "About", checked: true }, // About is checked by default
     { id: 2, name: "Work Type & Shift", checked: false },
@@ -101,6 +101,9 @@ export default function EmployeeList() {
             <h2 className="text-md mb-2 text-gray-600">Work Phone: None</h2>
             <h2 className="text-md mb-2 text-gray-600">Phone: 8973700081</h2>
           </div>
+        </div>
+        <div>
+          Edit button
         </div>
       </div>
 

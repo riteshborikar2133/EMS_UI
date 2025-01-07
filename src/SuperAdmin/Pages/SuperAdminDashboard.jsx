@@ -11,6 +11,8 @@ import Attendace from "../Attendance/Pages/Attendace";
 import Payroll from "../Payroll/Pages/Payroll";
 import Leave from "../Leave/Pages/Leave";
 import Performance from "../Performance/Pages/Performance";
+import Offboarding from "../Offboarding/Pages/Offboarding";
+import HelpDesk from "../HelpDesk/Pages/HelpDesk";
 
 export default function SuperAdminDashboard() {
   return (
@@ -26,12 +28,18 @@ export default function SuperAdminDashboard() {
           <Route path="onboarding/*" element={<Onboarding />}></Route>
 
           <Route path="employee/*" element={<Employee />}></Route>
+
           <Route path="attendance/*" element={<Attendace />}></Route>
+
           <Route path="payroll/*" element={<Payroll />} />
 
           <Route path="leave/*" element={<Leave />}></Route>
 
           <Route path="pms/*" element={<Performance />}></Route>
+
+          <Route path="offboarding/*" element={<Offboarding />}></Route>
+
+          <Route path="helpdesk/*" element={<HelpDesk />}></Route>
         </Routes>
       </div>
     </div>

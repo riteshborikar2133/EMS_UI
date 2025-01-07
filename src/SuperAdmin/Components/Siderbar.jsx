@@ -208,18 +208,131 @@ export default function Sidebar() {
             Attendance
           </div>
         </NavLink>
-        <NavLink to="/" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex  items-center gap-5">
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "leave" ? setIsHidden(null) : setIsHidden("leave");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
             <img src={Leave} alt="" />
             Leave
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "leave" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/leave/leave-employee-dashboard">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/user-request-view">
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              My Leave Requests
+            </h2>
+            </NavLink>
+
+            <NavLink to="/leave/request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Requests
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/type-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Types
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/assign-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Assigned Leave
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/leave-allocation-request-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Leave Allocation Request
+              </h2>
+            </NavLink>
+
+            <NavLink to="/leave/view-compensatory-leave">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Compensatory Leave Requests
+              </h2>
+            </NavLink>
           </div>
-        </NavLink>
-        <NavLink to="/home/project" className="">
-          <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5">
+        </div>
+        
+        <div>
+          <button
+            onClick={() => {
+              isHidden === "pms" ? setIsHidden(null) : setIsHidden("pms");
+            }}
+            className="p-3 h-[3rem] rounded-lg  box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border flex items-center gap-5 w-full"
+          >
             <img src={Project} alt="" />
-            Project
+            Performance
+          </button>
+
+          <div
+            className={`hidden-opt px-5 text-md ${
+              isHidden === "pms" ? "block" : "hidden"
+            }`}
+          >
+            <NavLink to="/pms/dashboard-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Dashboard
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/objective-list-view">
+            <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+              Objectives
+            </h2>
+            </NavLink>
+
+            <NavLink to="/pms/feedback-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                360 Feedback
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/view-meetings">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Meetings
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/view-key-result">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Key Results
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/employee-bonus-point">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Employee Bonus Point
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/period-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Period
+              </h2>
+            </NavLink>
+
+            <NavLink to="/pms/question-template-view">
+              <h2 className="p-3 h-[3rem] rounded-lg font-bol box-border text-md  hover:bg-[#8ed3e6] hover:border  flex items-center gap-5">
+                Question Template
+              </h2>
+            </NavLink>
           </div>
-        </NavLink>
+        </div>
         <NavLink to="/home/project" className="">
           <div className="p-3 h-[3rem] rounded-lg font-bol box-border text-lg mt-2 hover:bg-[#8ed3e6] hover:border items-center flex gap-5">
             <img src={Employee} alt="" />

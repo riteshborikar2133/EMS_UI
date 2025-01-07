@@ -401,6 +401,7 @@ export default function Sidebar() {
             </NavLink>
           </div>
         </div>
+
         {/* Performance */}
         <div>
           <button

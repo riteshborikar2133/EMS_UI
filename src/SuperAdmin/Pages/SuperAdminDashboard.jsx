@@ -4,10 +4,9 @@ import Sidebar from "../Components/Siderbar";
 import { Route, Routes } from "react-router-dom";
 import Recruitment from "../Recruitment/pages/Recruitment";
 import Employee from "../Employee/Pages/Employee";
-import EmployeeList from "../Employee/Components/EmployeeList";
 import Onboarding from "../Onboarding/Pages/Onboarding";
-import OnboardingView from "../Onboarding/Components/OnboardingView";
-import CandidatesView from "../Onboarding/Components/CandidatesView";
+import Leave from "../Leave/Pages/Leave";
+import Performance from "../Performance/Pages/Performance"
 
 export default function SuperAdminDashboard() {
   return (
@@ -23,6 +22,10 @@ export default function SuperAdminDashboard() {
           <Route path="onboarding/*" element={<Onboarding />}></Route>
 
           <Route path="employee/*" element={<Employee />}></Route>
+
+          <Route path="leave/*" element={<Leave />}></Route>
+
+          <Route path="pms/*" element={<Performance />}></Route>
         </Routes>
       </div>
     </div>

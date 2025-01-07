@@ -13,6 +13,7 @@ import Leave from "../Leave/Pages/Leave";
 import Performance from "../Performance/Pages/Performance";
 import Offboarding from "../Offboarding/Pages/Offboarding";
 import HelpDesk from "../HelpDesk/Pages/HelpDesk";
+import Assets from "../Assets/Pages/Assets";
 
 export default function SuperAdminDashboard() {
   return (
@@ -40,6 +41,8 @@ export default function SuperAdminDashboard() {
           <Route path="offboarding/*" element={<Offboarding />}></Route>
 
           <Route path="helpdesk/*" element={<HelpDesk />}></Route>
+
+          <Route path="/asset/*" element={<Assets />} />
         </Routes>
       </div>
     </div>

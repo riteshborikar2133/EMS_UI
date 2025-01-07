@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard";
-import Contract from "../Components/Contract";
-import Allowances from "../Components/Allowances";
-import Deductions from "../Components/Deductions";
-import Payslips from "../Components/Payslips";
-import LoanAdvancedSalary from "../Components/LoanAdvancedSalary";
-import Encashments from "../Components/Encashments";
-import FederalTax from "../Components/FederalTax";
+import Dashboard from "./Dashboard";
+import Contract from "./Contract";
+import Allowances from "./Allowances";
+import Deductions from "./Deductions";
+import Payslips from "./Payslips";
+import LoanAdvancedSalary from "./LoanAdvancedSalary";
+import Encashments from "./Encashments";
+import FederalTax from "./FederalTax";
+
 
 export default function Payroll() {
   return (

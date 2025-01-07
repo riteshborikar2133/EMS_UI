@@ -1,14 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard";
-import BiometricDevices from "../Components/BiometricDevices";
-import AttendanceView from "../Components/AttendanceView";
-import AttendanceRequest from "../Components/AttendanceRequest";
-import HourAccount from "../Components/HourAccount";
-import WorkRecords from "../Components/WorkRecords";
-import AttendanceActivities from "../Components/AttendanceActivities";
-import LateComeEarlyOut from "../Components/LateComeEarlyOut";
-import MyAttendnace from "../Components/MyAttendnace";
+import Dashboard from "./Dashboard";
+import BiometricDevices from "./BiometricDevices";
+import AttendanceView from "./AttendanceView";
+import AttendanceRequest from "./AttendanceRequest";
+import HourAccount from "./HourAccount";
+import WorkRecords from "./WorkRecords";
+import AttendanceActivities from "./AttendanceActivities";
+import LateComeEarlyOut from "./LateComeEarlyOut";
+import MyAttendnace from "./MyAttendnace";
+
 
 export default function Attendace() {
   return (

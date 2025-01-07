@@ -1,13 +1,13 @@
 import React from 'react'
-import Dashboard from '../Components/Dashboard'
-import Objectives from '../Components/Objectives'
-import Feedback from '../Components/Feedback'
-import Meetings from '../Components/Meetings'
-import KeyResults from '../Components/KeyResults'
-import EmployeeBonus from '../Components/EmployeeBonus'
-import Period from '../Components/Period'
-import QuestionTemplate from '../Components/QuestionTemplate'
 import { Route, Routes } from 'react-router-dom'
+import Objectives from './Objectives'
+import Feedback from './Feedback'
+import Meetings from './Meetings'
+import KeyResults from './KeyResults'
+import EmployeeBonus from './EmployeeBonus'
+import QuestionTemplate from './QuestionTemplate'
+import Period from './Period'
+import Dashboard from './Dashboard'
 
 export default function Performance() {
   return (

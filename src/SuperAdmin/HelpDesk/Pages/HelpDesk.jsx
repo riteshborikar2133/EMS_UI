@@ -1,8 +1,7 @@
 import React, { Profiler } from "react";
 import { Route, Routes } from "react-router-dom";
-import FAQ from "../Components/FAQ";
-import Tickets from "../Components/Tickets";
-
+import FAQ from "./FAQ";
+import Tickets from "./Tickets";
 
 export default function HelpDesk() {
   return (

@@ -1,12 +1,13 @@
 import React, { Profiler } from "react";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "../Components/Dashboard";
-import MyLeaveRequest from "../Components/MyLeaveRequest";
-import LeaveRequest from "../Components/LeaveRequest";
-import AssignedLeaves from "../Components/AssignedLeaves";
-import LeaveType from "../Components/LeaveType";
-import LeaveAllocation from "../Components/LeaveAllocation";
-import CompensatoryLeave from "../Components/CompensatoryLeave";
+import Dashboard from "./Dashboard";
+import MyLeaveRequest from "./MyLeaveRequest";
+import LeaveRequest from "./LeaveRequest";
+import LeaveType from "./LeaveType";
+import AssignedLeaves from "./AssignedLeaves";
+import LeaveAllocation from "./LeaveAllocation";
+import CompensatoryLeave from "./CompensatoryLeave";
+
 
 export default function Leave() {
   return (

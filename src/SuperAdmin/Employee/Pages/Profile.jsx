@@ -261,7 +261,6 @@ export default function Profile() {
   };
 
   return (
-
     <div className="flex bg-white mt-6 rounded-lg h-[85vh] shadow-md">
       {/* Sidebar */}
       <div className="min-h-full rounded-lg flex ">
@@ -282,92 +281,6 @@ export default function Profile() {
                 className="hover:text-gray-400"
               >
                 Work Type & Shift
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleSidebarClick("attendance")}
-                className="hover:text-gray-400"
-
-    <div className="box-border border bg-white p-3 px-6 rounded-lg shadow-sm w-full my-3">
-      <div className="flex h-[11rem]">
-        <div className="w-[32%] flex items-center justify-left gap-3">
-          <img src={Kutta} alt="" className="w-[8rem] h-[8rem] rounded-md" />
-          <h1 className="font-semibold text-2xl">{"  "}Employee Name(ID)</h1>
-        </div>
-        <div className="flex w-[68%] items-center">
-          <div>
-            <h2 className="text-md mb-2 text-gray-600">Work: None</h2>
-            <h2 className="text-md mb-2 text-gray-600">Email: None</h2>
-            <h2 className="text-md mb-2 text-gray-600">Work Phone: None</h2>
-            <h2 className="text-md mb-2 text-gray-600">Phone: 8973700081</h2>
-          </div>
-        </div>
-        <div>
-          Edit button
-        </div>
-      </div>
-
-      <div className="flex flex-col">
-        {/* Three Dots Button */}
-        <div className="flex justify-end relative">
-          <button
-            onClick={() => setIsFilterVisible(!isFilterVisible)}
-            className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
-          >
-            &#x22EE; {/* Unicode for vertical three dots */}
-          </button>
-
-          {/* Filter List - Positioned Below the Button */}
-          {isFilterVisible && (
-            <div
-              ref={filterRef} // Attach the ref here
-              className="absolute top-full right-0 mt-2 w-[20rem] border p-4 rounded-md bg-gray-50 shadow-lg z-50"
-            >
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleSelectAll}
-                    className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-                  >
-                    Select All
-                  </button>
-                  <button
-                    onClick={handleUnselectAll}
-                    className="p-2 bg-red-500 text-white rounded-md hover:bg-red-600"
-                  >
-                    Unselect All
-                  </button>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                {list.map((item) => (
-                  <label key={item.id} className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      checked={item.checked}
-                      onChange={() => handleCheckboxChange(item.id)}
-                      className="w-4 h-4"
-                      disabled={item.id === 1} // Disable About checkbox
-                    />
-                    <span>{item.name}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Display Selected Items */}
-        <div className="flex gap-4 flex-wrap mt-4">
-          {filteredList.length > 0 ? (
-            filteredList.map((item) => (
-              <span
-                key={item.id}
-                className="p-2 bg-gray-100 border rounded-md text-gray-800 cursor-pointer"
-                onClick={() => handleItemClick(item)}
-              >
-                Attendance
               </button>
             </li>
             <li>

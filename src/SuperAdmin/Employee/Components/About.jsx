@@ -130,6 +130,79 @@ const About = () => {
               <h2 className="text-md font-semibold">May. 22, 2024</h2>
             </div>
           </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Job Position</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Work Type</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Salary</p>
+              <h2 className="text-md font-semibold">18000</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Company</p>
+              <h2 className="text-md font-semibold">Micronet</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Joining Date</p>
+              <h2 className="text-md font-semibold">May. 22, 2024</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Tags</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bank Information */}
+      <div className="border-2 p-3 rounded-lg shadow-sm flex items-center mb-6 w-full">
+        <div className="ml-4 w-full">
+          <h2 className="text-md font-semibold">Bank Information</h2>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Bank Name</p>
+              <h2 className="text-md font-semibold">sdasdasdasd</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Branch</p>
+              <h2 className="text-md font-semibold">sadasd</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Bank Address</p>
+              <h2 className="text-md font-semibold">sadasd</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Bank Code #2</p>
+              <h2 className="text-md font-semibold">asd</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Account Number</p>
+              <h2 className="text-md font-semibold">asdasd</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Bank Code #1</p>
+              <h2 className="text-md font-semibold">asdasd</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Country</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
         </div>
       </div>
     </div>

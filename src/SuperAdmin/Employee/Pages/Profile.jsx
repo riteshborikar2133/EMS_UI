@@ -88,7 +88,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <div className="box-border border bg-white p-3 px-6 rounded-lg shadow-sm w-full my-3 relative">
+    <div className="box-border border bg-white p-3 px-6 rounded-lg shadow-sm w-full my-3">
       <div className="flex h-[11rem]">
         <div className="w-[32%] flex items-center justify-left gap-3">
           <img src={Kutta} alt="" className="w-[8rem] h-[8rem] rounded-md" />

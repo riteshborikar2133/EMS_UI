@@ -39,7 +39,7 @@ export default function Pipeline() {
             className={` w-1/4 text-center p-3 cursor-pointer rounded-tl-md  ${
               activeTab === "RecruitmentDrive"
                 ? "bg-white font-bold"
-                : "hover:bg-gray-100 bg-gray-200"
+                : "hover:bg-sky-400 bg-sky-200"
             }`}
             onClick={() => setActiveTab("RecruitmentDrive")}
           >
@@ -49,7 +49,7 @@ export default function Pipeline() {
             className={` w-1/4 text-center p-3 cursor-pointer  ${
               activeTab === "TalentAcquisition"
                 ? "bg-white font-bold"
-                : "hover:bg-gray-100 bg-gray-200"
+                : "hover:bg-sky-400 bg-sky-200"
             }`}
             onClick={() => setActiveTab("TalentAcquisition")}
           >
@@ -59,7 +59,7 @@ export default function Pipeline() {
             className={` w-1/4 text-center p-3 cursor-pointer  ${
               activeTab === "TestJobPosition"
                 ? "bg-white font-bold"
-                : "hover:bg-gray-100 bg-gray-200"
+                : "hover:bg-sky-400 bg-sky-200"
             }`}
             onClick={() => setActiveTab("TestJobPosition")}
           >
@@ -69,7 +69,7 @@ export default function Pipeline() {
             className={` w-1/4 text-center p-3 cursor-pointer rounded-tr-md  ${
               activeTab === "Developer"
                 ? "bg-white font-bold"
-                : "hover:bg-gray-100 bg-gray-200"
+                : "hover:bg-sky-400 bg-sky-200"
             }`}
             onClick={() => setActiveTab("Developer")}
           >

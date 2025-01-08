@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 export default function EmployeeList() {
   // State to store the list of employees fetched from the backend
@@ -11,11 +11,13 @@ export default function EmployeeList() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://192.168.1.240:8000/employee_registration/'); // Replace with your backend API
-        console.log(response.data.employees)
+        const response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/company/2/employee_list/`
+        ); // Replace with your backend API
+        console.log(response.data.employees);
         setEmployees(response.data.employees);
       } catch (error) {
-        console.error('Error fetching employee data:', error);
+        console.error("Error fetching employee data:", error);
       }
     };
     fetchEmployees();
@@ -36,7 +38,9 @@ export default function EmployeeList() {
           <button
             onClick={toggleView}
             className={`px-4 py-2 border rounded-md ${
-              !isCardView ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'
+              !isCardView
+                ? "bg-blue-500 text-white"
+                : "bg-gray-100 text-gray-700"
             }`}
           >
             List View
@@ -44,7 +48,9 @@ export default function EmployeeList() {
           <button
             onClick={toggleView}
             className={`px-4 py-2 border rounded-md ${
-              isCardView ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700'
+              isCardView
+                ? "bg-blue-500 text-white"
+                : "bg-gray-100 text-gray-700"
             }`}
           >
             Card View
@@ -59,8 +65,14 @@ export default function EmployeeList() {
             // Card View
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {employees.map((employee) => (
-                <div key={employee.id} className="p-4 border rounded-lg shadow-lg">
-                  <h2 className="text-lg font-medium">{employee.employee_first_name} {employee.employee_last_name} ({employee.badge_id})</h2>
+                <div
+                  key={employee.id}
+                  className="p-4 border rounded-lg shadow-lg"
+                >
+                  <h2 className="text-lg font-medium">
+                    {employee.employee_first_name} {employee.employee_last_name}{" "}
+                    ({employee.badge_id})
+                  </h2>
                   <p className="text-gray-500">{employee.email}</p>
                   <p className="text-gray-500">{employee.email}</p>
                 </div>
@@ -71,7 +83,10 @@ export default function EmployeeList() {
             <div>
               {employees.map((employee) => (
                 <div key={employee.id} className="p-3 border-b">
-                  <h2 className="text-lg font-medium">{employee.employee_first_name} {employee.employee_last_name} ({employee.badge_id})</h2>
+                  <h2 className="text-lg font-medium">
+                    {employee.employee_first_name} {employee.employee_last_name}{" "}
+                    ({employee.badge_id})
+                  </h2>
                   <p className="text-gray-500">{employee.email}</p>
                   <p className="text-gray-500">{employee.email}</p>
                 </div>

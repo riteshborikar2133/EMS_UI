@@ -1,31 +1,137 @@
-// About.js
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
+import Luffy from "../../../assets/Images/luffy.jpg";
 
 const About = () => {
-  const [aboutData, setAboutData] = useState(null);
-
-  useEffect(() => {
-    const fetchAboutData = async () => {
-      try {
-        const response = await axios.get("https://api.example.com/about");
-        setAboutData(response.data);
-      } catch (error) {
-        console.error("Error fetching about data", error);
-      }
-    };
-
-    fetchAboutData();
-  }, []);
-
-  if (!aboutData) {
-    return <p>Loading...</p>;
-  }
-
   return (
-    <div>
-      <h4>About Section</h4>
-      <p>{aboutData.description}</p>
+    <div className="border-red-600 overflow-y-scroll h-full">
+      {/* Image Segment */}
+      <h4 className="font-semibold text-lg mb-2">My Profile</h4>
+      <div className="border-2 p-3 rounded-lg shadow-sm flex items-center mb-6">
+        <img
+          src={Luffy}
+          alt="Profile"
+          className="w-[8rem] h-[8rem] rounded-full"
+        />
+        <div className="flex flex-col ml-4">
+          <h2 className="text-md font-semibold">John Doe</h2>
+          <p className="text-gray-500">Software Engineer</p>
+          <p className="text-gray-500">johndoe@gmail.com</p>
+        </div>
+      </div>
+
+      {/* Personal Information */}
+      <div className="border-2 p-3 rounded-lg shadow-sm flex items-center mb-6 w-full">
+        <div className="ml-4 w-full">
+          <h2 className="text-md font-semibold">Personal Information</h2>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Date of Birth</p>
+              <h2 className="text-md font-semibold">Dec. 9, 2024</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Gender</p>
+              <h2 className="text-md font-semibold">Male</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Address</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Country</p>
+              <h2 className="text-md font-semibold">Singapore</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">State</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">City</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Qualification</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Experience</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Marital Status</p>
+              <h2 className="text-md font-semibold">Single</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Children</p>
+              <h2 className="text-md font-semibold">2</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Emergency Contact</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">
+                Emergency Contact Name
+              </p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">
+                Emergency Contact Relation
+              </p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Work Information */}
+      <div className="border-2 p-3 rounded-lg shadow-sm flex items-center mb-6 w-full">
+        <div className="ml-4 w-full">
+          <h2 className="text-md font-semibold">Work Information</h2>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Department</p>
+              <h2 className="text-md font-semibold">S/W Dept</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Shift Information</p>
+              <h2 className="text-md font-semibold">Regular Shift</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Employee Type</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">Reporting Manager</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+          </div>
+          <div className="flex w-full">
+            <div className="px-6 w-[38%]">
+              <p className="text-gray-500 mt-6 text-md">Work Location</p>
+              <h2 className="text-md font-semibold">None</h2>
+            </div>
+            <div>
+              <p className="text-gray-500 mt-6 text-md">End Date</p>
+              <h2 className="text-md font-semibold">May. 22, 2024</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

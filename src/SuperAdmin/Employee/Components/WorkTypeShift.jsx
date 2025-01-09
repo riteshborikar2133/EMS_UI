@@ -62,7 +62,7 @@ export default function WorkTypeShift() {
             className={` w-1/4 text-center p-3 cursor-pointer rounded-tl-md  ${
               activeTab === "WorkTypeRequest"
                 ? "bg-white font-bold"
-                : "hover:bg-sky-400 bg-sky-200"
+                : "hover:bg-gray-400 bg-gray-200"
             }`}
             onClick={() => setActiveTab("WorkTypeRequest")}
           >
@@ -72,7 +72,7 @@ export default function WorkTypeShift() {
             className={` w-1/4 text-center p-3 cursor-pointer  ${
               activeTab === "RotatingWorkType"
                 ? "bg-white font-bold"
-                : "hover:bg-sky-400 bg-sky-200"
+                : "hover:bg-gray-400 bg-gray-200"
             }`}
             onClick={() => setActiveTab("RotatingWorkType")}
           >
@@ -82,7 +82,7 @@ export default function WorkTypeShift() {
             className={` w-1/4 text-center p-3 cursor-pointer  ${
               activeTab === "ShiftRequest"
                 ? "bg-white font-bold"
-                : "hover:bg-sky-400 bg-sky-200"
+                : "hover:bg-gray-400 bg-gray-200"
             }`}
             onClick={() => setActiveTab("ShiftRequest")}
           >
@@ -92,7 +92,7 @@ export default function WorkTypeShift() {
             className={` w-1/4 text-center p-3 cursor-pointer rounded-tr-md  ${
               activeTab === "RotatingShift"
                 ? "bg-white font-bold"
-                : "hover:bg-sky-400 bg-sky-200"
+                : "hover:bg-gray-400 bg-gray-200"
             }`}
             onClick={() => setActiveTab("RotatingShift")}
           >

@@ -285,6 +285,14 @@ export default function Profile() {
             </li>
             <li>
               <button
+                onClick={() => handleSidebarClick("attendance")}
+                className="hover:text-gray-400"
+              >
+                Attendance
+              </button>
+            </li>
+            <li>
+              <button
                 onClick={() => handleSidebarClick("leave")}
                 className="hover:text-gray-400"
               >

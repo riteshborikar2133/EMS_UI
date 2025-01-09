@@ -94,6 +94,7 @@ export default function RecruitmentList() {
                   <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 text-sm">
                     View
                   </button>
+
                   <button className="bg-red-500 text-white p-2 ml-2 rounded-md hover:bg-red-700 text-sm">
                     Delete
                   </button>

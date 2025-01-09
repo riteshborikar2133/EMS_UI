@@ -1,282 +1,180 @@
-// import axios from "axios";
-// import React, { useState, useEffect } from "react";
-
-// export default function EmployeeList() {
-//   // State to store the list of employees fetched from the backend
-//   const [employees, setEmployees] = useState([]);
-//   // State to toggle between List View and Card View
-//   const [isCardView, setIsCardView] = useState(true);
-
-//   // Fetch employees from backend when the component mounts
-//   useEffect(() => {
-//     const fetchEmployees = async () => {
-//       try {
-//         const response = await axios.get(
-//           `${import.meta.env.VITE_BASE_URL}/company/2/employee_list/`
-//         ); // Replace with your backend API
-//         console.log(response.data.employees);
-//         setEmployees(response.data.employees);
-//       } catch (error) {
-//         console.error("Error fetching employee data:", error);
-//       }
-//     };
-//     fetchEmployees();
-//   }, []);
-
-//   // Toggle view between List and Card
-//   const toggleView = () => {
-//     setIsCardView(!isCardView);
-//   };
-
-//   return (
-//     <div className="box-border border bg-white p-3 px-6 rounded-lg shadow-sm w-full my-3 relative">
-//       <div className="flex justify-between items-center mb-4">
-//         <h1 className="font-semibold text-2xl">Employees</h1>
-
-//         {/* View Buttons */}
-//         <div className="flex gap-2">
-//           <button
-//             onClick={toggleView}
-//             className={`px-4 py-2 border rounded-md ${
-//               !isCardView
-//                 ? "bg-blue-500 text-white"
-//                 : "bg-gray-100 text-gray-700"
-//             }`}
-//           >
-//             List View
-//           </button>
-//           <button
-//             onClick={toggleView}
-//             className={`px-4 py-2 border rounded-md ${
-//               isCardView
-//                 ? "bg-blue-500 text-white"
-//                 : "bg-gray-100 text-gray-700"
-//             }`}
-//           >
-//             Card View
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* Display Employees */}
-//       <div className="mt-4">
-//         {employees.length > 0 ? (
-//           isCardView ? (
-//             // Card View
-//             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-//               {employees.map((employee) => (
-//                 <div
-//                   key={employee.id}
-//                   className="p-4 border rounded-lg shadow-lg"
-//                 >
-//                   <h2 className="text-lg font-medium">
-//                     {employee.employee_first_name} {employee.employee_last_name}{" "}
-//                     ({employee.badge_id})
-//                   </h2>
-//                   <p className="text-gray-500">{employee.email}</p>
-//                   <p className="text-gray-500">{employee.email}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           ) : (
-//             // List View
-//             <div>
-//               {employees.map((employee) => (
-//                 <div key={employee.id} className="p-3 border-b">
-//                   <h2 className="text-lg font-medium">
-//                     {employee.employee_first_name} {employee.employee_last_name}{" "}
-//                     ({employee.badge_id})
-//                   </h2>
-//                   <p className="text-gray-500">{employee.email}</p>
-//                   <p className="text-gray-500">{employee.email}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           )
-//         ) : (
-//           <p>No employees found</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
-
-import React, { useState } from "react";
+import React from "react";
 
 export default function EmployeeList() {
   // Mock employee data
   const employees = [
     {
       name: "John Doe",
-      email: "johndoe@example.com",
-      gender: "Male",
-      address: "123 Main St, Cityville",
-      qualification: "B.Tech",
-      status: "Converted",
+      email: "john.doe@example.com",
+      phone: "123-456-7890",
+      badgeId: "E123",
+      jobPosition: "Manager",
+      department: "HR",
+      shift: "Day",
+      workType: "Full-time",
     },
     {
       name: "Jane Smith",
-      email: "janesmith@example.com",
-      gender: "Female",
-      address: "456 Elm St, Townsville",
-      qualification: "MBA",
-      status: "Hired",
+      email: "jane.smith@example.com",
+      phone: "234-567-8901",
+      badgeId: "E124",
+      jobPosition: "Employee",
+      department: "IT",
+      shift: "Night",
+      workType: "Part-time",
     },
     {
       name: "Alice Johnson",
-      email: "alicej@example.com",
-      gender: "Female",
-      address: "789 Pine St, Villageville",
-      qualification: "PhD",
-      status: "Not Hired",
+      email: "alice.johnson@example.com",
+      phone: "345-678-9012",
+      badgeId: "E125",
+      jobPosition: "HR",
+      department: "HR",
+      shift: "Day",
+      workType: "Full-time",
+    },
+    {
+      name: "Alice Johnson",
+      email: "alice.johnson@example.com",
+      phone: "345-678-9012",
+      badgeId: "E125",
+      jobPosition: "Team Lead",
+      department: "HR",
+      shift: "Day",
+      workType: "Full-time",
     },
     {
       name: "Bob Brown",
-      email: "bobbrown@example.com",
-      gender: "Male",
-      address: "321 Oak St, Hamlet",
-      qualification: "B.Sc",
-      status: "Canceled",
-    },
-    {
-      name: "John Doe",
-      email: "johndoe@example.com",
-      gender: "Male",
-      address: "123 Main St, Cityville",
-      qualification: "B.Tech",
-      status: "Converted",
+      email: "bob.brown@example.com",
+      phone: "456-789-0123",
+      badgeId: "E126",
+      jobPosition: "Employee",
+      department: "Finance",
+      shift: "Night",
+      workType: "Part-time",
     },
   ];
 
-  // State for selected filter
-  const [filter, setFilter] = useState("All");
+  // Function to get employee count by job position
+  const getEmployeeCountByPosition = (position) => {
+    return employees.filter((employee) => employee.jobPosition === position)
+      .length;
+  };
 
-  // Function to get the color class based on the employee's status
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "Converted":
-        return "border-l-[0.31rem] border-lime-300";
-      case "Hired":
-        return "border-l-[0.31rem] border-blue-300";
-      case "Not Hired":
-        return "border-l-[0.31rem] border-gray-400";
-      case "Canceled":
-        return "border-l-[0.31rem] border-red-300";
+  // Function to get color based on job position
+  const getJobPositionColor = (position) => {
+    switch (position) {
+      case "Manager":
+        return "border-lime-300"; // Green for Manager
+      case "HR":
+        return "border-blue-300"; // Blue for HR Team Lead
+      case "Team Lead":
+        return "border-amber-300"; // Blue for HR Team Lead
+      case "Employee":
+        return "border-orange-300"; // Gray for Employee
       default:
-        return "bg-white";
+        return "border-gray-300"; // Default color
     }
   };
 
-  // Filtered employees based on the selected filter
-  const filteredEmployees =
-    filter === "All"
-      ? employees
-      : employees.filter((employee) => employee.status === filter);
-
   return (
-    <>
-      <div className="box-border  p-3 px-6 rounded-lg w-full my-3">
-        <div className="border bg-white p-3 rounded-md shadow-sm flex justify-between items-center">
-          <h2 className="font-semibold text-xl">Employees</h2>
-          <div className="flex items-center gap-2">
-            <select
-              className="border p-2 rounded-md text-sm"
-              value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            >
-              <option value="All">All</option>
-              <option value="Converted">Converted</option>
-              <option value="Hired">Hired</option>
-              <option value="Not Hired">Not Hired</option>
-              <option value="Canceled">Canceled</option>
-            </select>
-            <button className="border-black bg-green-400 p-2 rounded-md hover:bg-green-700 hover:text-white text-sm">
-              Create
-            </button>
-          </div>
-        </div>
-
-        <div className="cardwrapper flex mt-4 gap-5">
-          <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
-            <div>
-              <h2 className="font-semibold text-gray-500">Converted</h2>
-              <h2 className="font-bold text-xl">
-                {employees.filter((e) => e.status === "Converted").length}
-              </h2>
-            </div>
-            <div className="bg-lime-300 h-5 w-5 rounded-full"></div>
-          </div>
-          <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
-            <div>
-              <h2 className="font-semibold text-gray-500">Hired</h2>
-              <h2 className="font-bold text-xl">
-                {employees.filter((e) => e.status === "Hired").length}
-              </h2>
-            </div>
-            <div className="bg-blue-300 h-5 w-5 rounded-full"></div>
-          </div>
-          <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
-            <div>
-              <h2 className="font-semibold text-gray-500">Not Hired</h2>
-              <h2 className="font-bold text-xl">
-                {employees.filter((e) => e.status === "Not Hired").length}
-              </h2>
-            </div>
-            <div className="bg-gray-300 h-5 w-5 rounded-full"></div>
-          </div>
-          <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
-            <div>
-              <h2 className="font-semibold text-gray-500">Canceled</h2>
-              <h2 className="font-bold text-xl">
-                {employees.filter((e) => e.status === "Canceled").length}
-              </h2>
-            </div>
-            <div className="bg-red-300 h-5 w-5 rounded-full"></div>
-          </div>
-        </div>
-
-        <div className="list bg-white mt-4 shadow-md rounded-md p-4">
-          <table className="w-full table-auto text-left">
-            <thead>
-              <tr>
-                <th className="p-3 border-b">Name</th>
-                <th className="p-3 border-b">Email</th>
-                <th className="p-3 border-b">Gender</th>
-                <th className="p-3 border-b">Address</th>
-                <th className="p-3 border-b">Qualification</th>
-                <th className="p-3 border-b">Status</th>
-                <th className="p-3 border-b">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredEmployees.map((employee, index) => (
-                <tr
-                  key={index}
-                  className={`${getStatusColor(employee.status)} bg-opacity-50`}
-                >
-                  <td className="p-3 font-medium">{employee.name}</td>
-                  <td className="p-3 text-gray-500">{employee.email}</td>
-                  <td className="p-3 text-gray-500">{employee.gender}</td>
-                  <td className="p-3 text-gray-500">{employee.address}</td>
-                  <td className="p-3 text-gray-500">{employee.qualification}</td>
-                  <td className="p-3 text-gray-500">{employee.status}</td>
-                  <td className="p-3">
-                    <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 text-sm">
-                      View
-                    </button>
-                    <button className="bg-yellow-500 text-white p-2 ml-2 rounded-md hover:bg-yellow-700 text-sm">
-                      Edit
-                    </button>
-                    <button className="bg-red-500 text-white p-2 ml-2 rounded-md hover:bg-red-700 text-sm">
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <div className="box-border p-3 px-6 rounded-lg w-full my-3">
+      <div className="border bg-white p-3 rounded-md shadow-sm flex justify-between items-center">
+        <h2 className="font-semibold text-xl">Employees</h2>
+        <div className="flex items-center gap-2">
+          <button className="bg-green-500 text-white p-2 rounded-md hover:bg-green-700 text-sm">
+            Create New
+          </button>
         </div>
       </div>
-    </>
+
+      <div className="cardwrapper flex mt-4 gap-5">
+        <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
+          <div>
+            <h2 className="font-semibold text-gray-500">Manager</h2>
+            <h2 className="font-bold text-xl">
+              {getEmployeeCountByPosition("Manager")}
+            </h2>
+          </div>
+          <div className="bg-lime-300 h-5 w-5 rounded-full"></div>
+        </div>
+        <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
+          <div>
+            <h2 className="font-semibold text-gray-500">HR</h2>
+            <h2 className="font-bold text-xl">
+              {getEmployeeCountByPosition("HR Team Lead")}
+            </h2>
+          </div>
+          <div className="bg-blue-300 h-5 w-5 rounded-full"></div>
+        </div>
+        <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
+          <div>
+            <h2 className="font-semibold text-gray-500">Team Lead</h2>
+            <h2 className="font-bold text-xl">
+              {getEmployeeCountByPosition("Employee")}
+            </h2>
+          </div>
+          <div className="bg-amber-300 h-5 w-5 rounded-full"></div>
+        </div>
+
+        <div className="card bg-white shadow-md p-4 flex items-center gap-3 rounded-md">
+          <div>
+            <h2 className="font-semibold text-gray-500">Employee</h2>
+            <h2 className="font-bold text-xl">
+              {getEmployeeCountByPosition("Employee")}
+            </h2>
+          </div>
+          <div className="bg-orange-300 h-5 w-5 rounded-full"></div>
+        </div>
+      </div>
+
+      <div className="list bg-white mt-4 shadow-md rounded-md p-4">
+        <table className="w-full table-auto text-left">
+          <thead>
+            <tr>
+              <th className="p-3 border-b">Employee</th>
+              <th className="p-3 border-b">Email</th>
+              <th className="p-3 border-b">Phone</th>
+              <th className="p-3 border-b">Badge Id</th>
+              <th className="p-3 border-b">Job Position</th>
+              <th className="p-3 border-b">Department</th>
+              <th className="p-3 border-b">Shift</th>
+              <th className="p-3 border-b">Work Type</th>
+              <th className="p-3 border-b">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {employees.map((employee, index) => (
+              <tr
+                key={index}
+                className={`${getJobPositionColor(employee.jobPosition)} border-l-4 hover:bg-gray-100`}
+              >
+                <td className="p-3">{employee.name}</td>
+                <td className="p-3">{employee.email}</td>
+                <td className="p-3">{employee.phone}</td>
+                <td className="p-3">{employee.badgeId}</td>
+                <td className="p-3">{employee.jobPosition}</td>
+                <td className="p-3">{employee.department}</td>
+                <td className="p-3">{employee.shift}</td>
+                <td className="p-3">{employee.workType}</td>
+                <td className="p-3">
+                  <button className="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-700 text-sm">
+                    View
+                  </button>
+                  <button className="bg-red-500 text-white p-2 ml-2 rounded-md hover:bg-red-700 text-sm">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {employees.length === 0 && (
+          <div className="text-center text-gray-500 mt-4">
+            No employees found.
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
